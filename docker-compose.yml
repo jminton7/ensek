@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:16
+    container_name: ensek-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ensek
+    ports:
+      - "5439:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: ./Ensek
+      dockerfile: Dockerfile
+    container_name: ensek-api
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_URLS: http://+:8080
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Postgres: Host=db;Port=5432;Database=ensek;Username=postgres;Password=postgres
+    ports:
+      - "8080:8080"
+
+volumes:
+  dbdata:
