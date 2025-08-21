@@ -1,0 +1,92 @@
+#-------------------------------------------------------------------------------
+# .NET / Visual Studio / VS Code
+#-------------------------------------------------------------------------------
+
+# Build outputs
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code workspace state (keep project-specific configs if you add them)
+.history/
+
+# Rider / JetBrains
+.idea/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuget.props
+*.nuget.targets
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+*.swp
+*.DS_Store
+Thumbs.db
+
+#-------------------------------------------------------------------------------
+# Test and coverage artifacts
+#-------------------------------------------------------------------------------
+
+# Test results and coverage reports
+TestResults/
+**/TestResults/
+coverage/
+coverage-*/
+**/coverage.cobertura.xml
+**/coverage.opencover.xml
+**/coverage.info
+CoverageReport/
+
+# Coverlet/ReportGenerator temp
+*.lcov
+*.opencover.xml
+*.cobertura.xml
+
+#-------------------------------------------------------------------------------
+# Tooling caches
+#-------------------------------------------------------------------------------
+
+.ionide/
+.fake/
+.paket/
+.sonarqube/
+.scannerwork/
+.nyc_output/
+
+#-------------------------------------------------------------------------------
+# Docker / environment
+#-------------------------------------------------------------------------------
+
+.env
+*.env
+docker-compose.override.yml
+
+#-------------------------------------------------------------------------------
+# Entity Framework
+#-------------------------------------------------------------------------------
+
+# Keep migrations tracked. Do NOT ignore Migrations/*.cs
+!Ensek/Data/Migrations/
+
+#-------------------------------------------------------------------------------
+# App configuration
+#-------------------------------------------------------------------------------
+
+# Keep appsettings.json. Optionally ignore local overrides if you add them.
+appsettings.*.local.json
+appsettings.Development.local.json
